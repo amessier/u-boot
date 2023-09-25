@@ -37,7 +37,7 @@ void dram_vol_set(struct dram_para_t *para)
 	case 3:  vol = 25; break;
 	default: vol = 0;
 	}
-vol = 25; // XXX
+
 	reg = readl(0x3000150);
 	reg &= ~(0xff00);
 	reg |= vol << 8;
