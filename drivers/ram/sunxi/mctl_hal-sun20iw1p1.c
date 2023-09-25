@@ -883,7 +883,7 @@ void mctl_phy_ac_remapping(struct dram_para_t *para)
 	unsigned int fuse, val;
 
 	// read SID info @ 0x228
-	fuse = (readl(0x3006228) >> 8) & 0x4;
+	fuse = (readl(0x3006228) >> 8) & 0xf;
 	printf("ddr_efuse_type: 0x%x\n", fuse);
 
 	if ((para->dram_tpr13 >> 18) & 0x3) {
