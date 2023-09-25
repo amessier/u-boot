@@ -16,6 +16,7 @@ dtb-$(CONFIG_TARGET_SUN20I_D1) += sun20i-d1-lichee-rv-dock.dtb
 dtb-$(CONFIG_TARGET_SUN20I_D1) += sun20i-d1-lichee-rv.dtb
 dtb-$(CONFIG_TARGET_SUN20I_D1) += sun20i-d1-mangopi-mq-pro.dtb
 dtb-$(CONFIG_TARGET_SUN20I_D1) += sun20i-d1-nezha.dtb
+dtb-$(CONFIG_TARGET_SUN20I_D1) += sun20i-d1s-mangopi-mq.dtb
 
 include $(srctree)/scripts/Makefile.dts
 
