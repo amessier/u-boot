@@ -1720,6 +1720,33 @@ static struct dram_para_t dram_para = {
 	0x34050100,
 };
 
+static struct dram_para_t dram_para_ddr2 = {
+	0x00000210,
+	0x00000002,
+	0x007b7bf9,
+	0x00000000,
+	0x000000d2,
+	0x00000000,
+	0x00000e73,
+	0x00000002,
+	0x00000000,
+	0x00000000,
+	0x00471992,
+	0x0131a10c,
+	0x00057041,
+	0xb4787896,
+	0x00000000,
+	0x48484848,
+	0x00000048,
+	0x1621121e,
+	0x00000000,
+	0x00000000,
+	0x00000000,
+	0x00030010,
+	0x00000035,
+	0x34000000,
+};
+
 static int sunxi_ram_probe(struct udevice *dev)
 {
 	struct sunxi_ram_priv *priv = dev_get_priv(dev);
@@ -1728,6 +1755,9 @@ static int sunxi_ram_probe(struct udevice *dev)
 	printf("%s: %s: probing\n", __func__, dev->name);
 
 	ret = init_DRAM(0, &dram_para);
+	if (ret <= 0) {
+		ret = init_DRAM(0, &dram_para_ddr2);
+	}
 	if (ret <= 0) {
 		printf("DRAM init failed: %d\n", ret);
 		return ret;
