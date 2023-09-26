@@ -1577,7 +1577,7 @@ signed int init_DRAM(int type, struct dram_para_t *para) // s0
 		udelay(10);
 		writel(0x3000160, readl(0x3000160) |  0x001);
 		udelay(20);
-		printf("ZQ value = 0x%x***********\n", readl(0x3000172));
+		printf("ZQ value = 0x%x***********\n", readl(0x300016c));
 	}
 
 	// Set voltage
