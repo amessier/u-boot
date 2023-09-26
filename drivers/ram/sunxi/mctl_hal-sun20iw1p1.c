@@ -1410,7 +1410,7 @@ int auto_scan_dram_size(struct dram_para_t *para) // s7
 		while (readl(mc_work_mode) != rval);
 
 		// Test if bit A23 is BA2 or mirror XXX A22?
-		chk = RAM_BASE + (1 << 22);
+		chk = RAM_BASE + (1 << 23) + 0x800;
 		ptr = RAM_BASE;
 		for (i = 0, j = 0; i < 64; i++) {
 			if (readl(chk) != ((i & 1) ? ptr : ~ptr)) {
