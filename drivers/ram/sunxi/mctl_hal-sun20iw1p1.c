@@ -905,7 +905,7 @@ void mctl_phy_ac_remapping(struct dram_para_t *para)
 		if (fuse == 15) return;
 		memcpy_self(cfg0, cfg6, 22);
 	}
-	if ( para->dram_type == 2 || para->dram_type == 3) {
+	if (para->dram_type == 3) {
 
 		val = (cfg0[ 4] << 25) | (cfg0[ 3] << 20) | (cfg0[ 2] << 15) |
 		      (cfg0[ 1] << 10) | (cfg0[ 0] <<  5);
